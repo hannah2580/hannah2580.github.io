@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Your Name</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF9F6;
+    --ink: #1a1a18;
+    --muted: #7a7870;
+    --accent: #b5855a;
+    --border: #e8e5df;
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); border-bottom: 1px solid var(--ink); }
+
+  .page-header { margin-bottom: 3rem; }
+  .page-header h1 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .page-header p {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .project-grid { display: flex; flex-direction: column; gap: 1px; }
+  .project-card {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+  }
+  .project-card:first-child { border-top: 1px solid var(--border); }
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .project-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    background: var(--border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+  .project-link {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    margin-top: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: opacity 0.2s;
+  }
+  .project-link:hover { opacity: 0.7; }
+
+  footer {
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="index.html">Your Name</a>
+  <ul class="nav-links">
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Projects</h1>
+  <p>Data science work — analyses, tools, and experiments.</p>
+</div>
+
+<div class="section-label">Data science</div>
+<div class="project-grid">
+
+  <div class="project-card">
+    <div>
+      <div class="project-title">Project Title One</div>
+      <div class="project-desc">A short write-up about what this project does, the problem it solved, and what you learned. Keep it to 2–3 sentences.</div>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Pandas</span>
+        <span class="project-tag">Scikit-learn</span>
+      </div>
+    </div>
+    <a class="project-link" href="https://github.com/hannah2580" target="_blank">GitHub →</a>
+  </div>
+
+  <div class="project-card">
+    <div>
+      <div class="project-title">Project Title Two</div>
+      <div class="project-desc">Another short description here. What dataset did you use? What insight did you surface? What technique did you apply?</div>
+      <div class="project-tags">
+        <span class="project-tag">NLP</span>
+        <span class="project-tag">Transformers</span>
+        <span class="project-tag">Streamlit</span>
+      </div>
+    </div>
+    <a class="project-link" href="https://github.com/hannah2580" target="_blank">GitHub →</a>
+  </div>
+
+  <div class="project-card">
+    <div>
+      <div class="project-title">Project Title Three</div>
+      <div class="project-desc">Keep these punchy. Recruiters skim — lead with the result, not the method.</div>
+      <div class="project-tags">
+        <span class="project-tag">SQL</span>
+        <span class="project-tag">Plotly</span>
+        <span class="project-tag">GeoPandas</span>
+      </div>
+    </div>
+    <a class="project-link" href="https://github.com/hannah2580" target="_blank">GitHub →</a>
+  </div>
+
+</div>
+
+<footer>
+  Built with GitHub Pages.
+</footer>
+
+</body>
+</html>
