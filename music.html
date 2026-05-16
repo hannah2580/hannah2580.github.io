@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | Your Name</title>
+<title>Music | Hannah Tang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -90,68 +90,48 @@
     background: var(--border);
   }
 
-  .project-grid { display: flex; flex-direction: column; gap: 1px; }
-  .project-card {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    align-items: start;
-  }
-  .project-card:first-child { border-top: 1px solid var(--border); }
-  .project-title {
-    font-family: var(--serif);
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-  }
-  .project-desc {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 0.6rem;
-  }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-  .project-tag {
-    font-size: 0.7rem;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    background: var(--border);
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-  }
-  .project-link {
-    font-size: 0.8rem;
-    color: var(--accent);
-    text-decoration: none;
-    white-space: nowrap;
-    margin-top: 0.25rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    transition: opacity 0.2s;
-  }
-  .project-link:hover { opacity: 0.7; }
+.creative-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.creative-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+.creative-card:hover { border-color: var(--accent); }
+.creative-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--border);
+  font-size: 2rem;
+}
+.creative-meta { padding: 0.75rem 1rem; }
+.creative-title {
+  font-size: 0.9rem;
+  font-family: var(--serif);
+  margin-bottom: 0.2rem;
+}
+.creative-sub { font-size: 0.78rem; color: var(--muted); }
 
-  footer {
-    margin-top: 5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-name" href="index.html">Your Name</a>
+  <a class="nav-name" href="index.html">Hannah Tang</a>
   <ul class="nav-links">
-    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
     <li><a href="writing.html">Writing</a></li>
-    <li><a href="music.html">Music</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="music.html" class="active">Music</a></li>
   </ul>
 </nav>
 
@@ -160,37 +140,19 @@
   <p>Music Compositions — orchestral, electronic, and random ones.</p>
 </div>
 
-<section id="music">
-  <div class="section-label">Music</div>
-  <div class="creative-grid">
+<div class="creative-grid">
     <a class="creative-card" href="https://soundcloud.com/hannaht-zy/mario-kart-soundtrack">
       <div class="creative-thumb">♩</div>
       <div class="creative-meta">
         <div class="creative-title">My Mario Kart Soundtrack</div>
-        <div class="creative-sub">Piano · 3:24</div>
+        <div class="creative-sub">Electronic Music · 3:24</div>
       </div>
     </a>
-    <a class="creative-card" href="#">
+    <a class="creative-card" href="https://soundcloud.com/hannaht-zy/chinese-dance-or-an-anime">
       <div class="creative-thumb">♫</div>
       <div class="creative-meta">
-        <div class="creative-title">Another Piece</div>
-        <div class="creative-sub">Guitar · 2:10</div>
-      </div>
-    </a>
-    <a class="creative-card" href="#">
-      <div class="creative-thumb">♬</div>
-      <div class="creative-meta">
-        <div class="creative-title">A Third One</div>
-        <div class="creative-sub">Ambient · 5:00</div>
-      </div>
-    </a>
-    <a class="creative-card" href="#">
-      <div class="creative-thumb">♩</div>
-      <div class="creative-meta">
-        <div class="creative-title">Latest Work</div>
-        <div class="creative-sub">Mixed · 4:15</div>
+        <div class="creative-title">Chinese Dance Music</div>
+        <div class="creative-sub">Orchestral · 2:10</div>
       </div>
     </a>
   </div>
-</section>
-

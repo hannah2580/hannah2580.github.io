@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | Your Name</title>
+<title>Writing | Hannah Tang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -91,93 +91,91 @@
   }
 
   .project-grid { display: flex; flex-direction: column; gap: 1px; }
-  .project-card {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    align-items: start;
-  }
-  .project-card:first-child { border-top: 1px solid var(--border); }
-  .project-title {
-    font-family: var(--serif);
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-  }
-  .project-desc {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 0.6rem;
-  }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-  .project-tag {
-    font-size: 0.7rem;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    background: var(--border);
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-  }
-  .project-link {
-    font-size: 0.8rem;
-    color: var(--accent);
-    text-decoration: none;
-    white-space: nowrap;
-    margin-top: 0.25rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    transition: opacity 0.2s;
-  }
-  .project-link:hover { opacity: 0.7; }
+.project-card {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+}
+.project-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.project-title:hover { color: var(--accent); }
+.project-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.project-link {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.project-card:first-child { border-top: none; }
+.section-label { margin-bottom: 0; }
 
-  footer {
-    margin-top: 5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
+.project-card:last-child { border-bottom: none; }
+
+/* everything you already have... */
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-name" href="index.html">Your Name</a>
+  <a class="nav-name" href="index.html">Hannah Tang</a>
   <ul class="nav-links">
-    <li><a href="projects.html" class="active">Projects</a></li>
-    <li><a href="writing.html">Writing</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="writing.html" class="active">Writing</a></li>
     <li><a href="music.html">Music</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
   </ul>
 </nav>
 
 <div class="page-header">
   <h1>Writing</h1>
-  <p>Writings — just thoughts.</p>
+  <p> this girl needs somewhere to store her incredibly profound thoughts.</p>
 </div>
 
-<section id="writing">
-  <div class="section-label">Writing</div>
-  <div class="post-list">
-    <div class="post-item">
-      <a class="post-title" href="#">Why I stopped using correlation matrices</a>
-      <span class="post-date">May 2026</span>
+<div class="section-label">Psychology</div>
+<div class="project-grid">
+  <div class="project-card">
+    <div>
+      <a class="project-title" href="#">Why I stopped using correlation matrices</a>
+      <p class="project-desc">A deep dive into the pitfalls of correlation matrices and better alternatives for understanding relationships in data.</p>
     </div>
-    <div class="post-item">
-      <a class="post-title" href="#">What baking taught me about overfitting</a>
-      <span class="post-date">Apr 2026</span>
+    <span class="project-link">May 2026</span>
+  </div>
+  <div class="project-card">
+    <div>
+      <a class="project-title" href="#">What baking taught me about overfitting</a>
+      <p class="project-desc">A deep dive into the pitfalls of overfitting and how baking helped me understand it better.</p>
     </div>
-    <div class="post-item">
-      <a class="post-title" href="#">Building a Spotify mood classifier from scratch</a>
-      <span class="post-date">Mar 2026</span>
+    <span class="project-link">Apr 2026</span>
+  </div>
+</div>
+
+<div class="section-label" style="margin-top: 2.5rem;">Economics</div>
+<div class="project-grid">
+    <div class="project-card">
+        <div class="project-left">
+            <a class="project-title" href="#">Building a Spotify mood classifier from scratch</a>
+            <p class="project-desc">A deep dive into the process of building a mood classifier for Spotify using machine learning techniques.</p>
+        </div>
+        <span class="project-link">Mar 2026</span>
     </div>
-    <div class="post-item">
-      <a class="post-title" href="#">Notes on learning music theory as an adult</a>
-      <span class="post-date">Feb 2026</span>
+    <div class="project-card">
+        <div class="project-left">
+            <a class="project-title" href="#">Notes on learning music theory as an adult</a>
+            <p class="project-desc">Reflections on the challenges and rewards of studying music theory as an older learner.</p>
+        </div>
+        <span class="project-link">Feb 2026</span>
     </div>
   </div>
-</section>

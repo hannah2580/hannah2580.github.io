@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | Your Name</title>
+<title>Projects | Hannah Tang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -100,6 +100,7 @@
     align-items: start;
   }
   .project-card:first-child { border-top: 1px solid var(--border); }
+  .project-card:last-child { border-bottom: none; }
   .project-title {
     font-family: var(--serif);
     font-size: 1rem;
@@ -141,23 +142,28 @@
     font-size: 0.78rem;
     color: var(--muted);
   }
+
+  .project-card:first-child { border-top: none; }
+  .section-label { margin-bottom: 0; }
+
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-name" href="index.html">Your Name</a>
+  <a class="nav-name" href="index.html">Hannah Tang</a>
   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="projects.html" class="active">Projects</a></li>
     <li><a href="writing.html">Writing</a></li>
     <li><a href="music.html">Music</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
   </ul>
 </nav>
 
+
 <div class="page-header">
   <h1>Projects</h1>
-  <p>Data science work — analyses, tools, and experiments.</p>
+  <p>Some fun data science projects and apps!</p>
 </div>
 
 <div class="section-label">Data science</div>
@@ -188,25 +194,26 @@
     </div>
     <a class="project-link" href="https://github.com/hannah2580" target="_blank">GitHub →</a>
   </div>
+</div>
 
+<div class="section-label" style="margin-top: 2.5rem;">Apps</div>
+<div class="project-grid">
   <div class="project-card">
     <div>
       <div class="project-title">Project Title Three</div>
-      <div class="project-desc">Keep these punchy. Recruiters skim — lead with the result, not the method.</div>
+      <div class="project-desc"> A website tackling elderly loneliness in London, where seniors can discover local events, host their own "circle sessions," join interest-based communities, and connect with others. Features location-based event filtering, messaging, and public/paid event listings from external organisations.
+ </div>
       <div class="project-tags">
-        <span class="project-tag">SQL</span>
-        <span class="project-tag">Plotly</span>
-        <span class="project-tag">GeoPandas</span>
+        <span class="project-tag">Lovable</span>
+        <span class="project-tag">Social Impact</span>
+        <span class="project-tag">Vibe-Coding</span>
       </div>
     </div>
-    <a class="project-link" href="https://github.com/hannah2580" target="_blank">GitHub →</a>
+    <a class="project-link" href="https://london-seniors-connect.lovable.app" target="_blank">Link to Website →</a>
   </div>
 
 </div>
 
-<footer>
-  Built with GitHub Pages.
-</footer>
 
 </body>
 </html>
