@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF9F6;
+    --ink: #1a1a18;
+    --muted: #7a7870;
+    --accent: #b5855a;
+    --border: #e8e5df;
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  .hero { margin-bottom: 5rem; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .hero h1 em { color: var(--accent); font-style: italic; }
+  .hero p {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.8;
+  }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+  }
+
+  section { margin-bottom: 4.5rem; }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .project-grid { display: flex; flex-direction: column; gap: 1px; }
+  .project-card {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+  }
+  .project-card:first-child { border-top: 1px solid var(--border); }
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .project-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    background: var(--border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+  .project-link {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    margin-top: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: opacity 0.2s;
+  }
+  .project-link:hover { opacity: 0.7; }
+
+  .post-list { display: flex; flex-direction: column; gap: 0; }
+  .post-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .post-item:first-child { border-top: 1px solid var(--border); }
+  .post-title {
+    font-size: 0.95rem;
+    font-family: var(--serif);
+    text-decoration: none;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+  .post-title:hover { color: var(--accent); }
+  .post-date {
+    font-size: 0.78rem;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .creative-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .creative-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s;
+  }
+  .creative-card:hover { border-color: var(--accent); }
+  .creative-thumb {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--border);
+    font-size: 2rem;
+  }
+  .creative-meta { padding: 0.75rem 1rem; }
+  .creative-title {
+    font-size: 0.9rem;
+    font-family: var(--serif);
+    margin-bottom: 0.2rem;
+  }
+  .creative-sub { font-size: 0.78rem; color: var(--muted); }
+
+  .contact-row { display: flex; flex-direction: column; gap: 0.6rem; }
+  .contact-item { display: flex; gap: 1rem; font-size: 0.9rem; }
+  .contact-label {
+    color: var(--muted);
+    min-width: 80px;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+  }
+  .contact-value a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .contact-value a:hover { border-color: var(--accent); }
+
+  footer {
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Your Name</span>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#music">Music</a></li>
+    <li><a href="#baking">Baking</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Data, music,<br>and <em>sourdough.</em></h1>
+  <p>Data scientist by training. Composer and baker by compulsion. This is where I keep myself honest — every project, post, and loaf, in one place.</p>
+  <div class="tag-row">
+    <span class="tag">Data Science</span>
+    <span class="tag">Music</span>
+    <span class="tag">Baking</span>
+    <span class="tag">Open to Work</span>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">Data science</div>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div>
+        <div class="project-title">Project Title One</div>
+        <div class="project-desc">A short write-up about what this project does, the problem it solved, and what you learned. Keep it to 2–3 sentences.</div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Pandas</span>
+          <span class="project-tag">Scikit-learn</span>
+        </div>
+      </div>
+      <a class="project-link" href="https://github.com/hannah2580" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-title">Project Title Two</div>
+        <div class="project-desc">Another short description here. What dataset did you use? What insight did you surface? What technique did you apply?</div>
+        <div class="project-tags">
+          <span class="project-tag">NLP</span>
+          <span class="project-tag">Transformers</span>
+          <span class="project-tag">Streamlit</span>
+        </div>
+      </div>
+      <a class="project-link" href="https://github.com/hannah2580" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-title">Project Title Three</div>
+        <div class="project-desc">Keep these punchy. Recruiters skim — lead with the result, not the method.</div>
+        <div class="project-tags">
+          <span class="project-tag">SQL</span>
+          <span class="project-tag">Plotly</span>
+          <span class="project-tag">GeoPandas</span>
+        </div>
+      </div>
+      <a class="project-link" href="https://github.com/hannah2580" target="_blank">GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="writing">
+  <div class="section-label">Writing</div>
+  <div class="post-list">
+    <div class="post-item">
+      <a class="post-title" href="#">Why I stopped using correlation matrices</a>
+      <span class="post-date">May 2026</span>
+    </div>
+    <div class="post-item">
+      <a class="post-title" href="#">What baking taught me about overfitting</a>
+      <span class="post-date">Apr 2026</span>
+    </div>
+    <div class="post-item">
+      <a class="post-title" href="#">Building a Spotify mood classifier from scratch</a>
+      <span class="post-date">Mar 2026</span>
+    </div>
+    <div class="post-item">
+      <a class="post-title" href="#">Notes on learning music theory as an adult</a>
+      <span class="post-date">Feb 2026</span>
+    </div>
+  </div>
+</section>
+
+<section id="music">
+  <div class="section-label">Music</div>
+  <div class="creative-grid">
+    <a class="creative-card" href="#">
+      <div class="creative-thumb">♩</div>
+      <div class="creative-meta">
+        <div class="creative-title">Composition Title</div>
+        <div class="creative-sub">Piano · 3:24</div>
+      </div>
+    </a>
+    <a class="creative-card" href="#">
+      <div class="creative-thumb">♫</div>
+      <div class="creative-meta">
+        <div class="creative-title">Another Piece</div>
+        <div class="creative-sub">Guitar · 2:10</div>
+      </div>
+    </a>
+    <a class="creative-card" href="#">
+      <div class="creative-thumb">♬</div>
+      <div class="creative-meta">
+        <div class="creative-title">A Third One</div>
+        <div class="creative-sub">Ambient · 5:00</div>
+      </div>
+    </a>
+    <a class="creative-card" href="#">
+      <div class="creative-thumb">♩</div>
+      <div class="creative-meta">
+        <div class="creative-title">Latest Work</div>
+        <div class="creative-sub">Mixed · 4:15</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="baking">
+  <div class="section-label">Baking</div>
+  <div class="creative-grid">
+    <a class="creative-card" href="#">
+      <div class="creative-thumb">🍞</div>
+      <div class="creative-meta">
+        <div class="creative-title">Country Sourdough</div>
+        <div class="creative-sub">75% hydration · May 2026</div>
+      </div>
+    </a>
+    <a class="creative-card" href="#">
+      <div class="creative-thumb">🥐</div>
+      <div class="creative-meta">
+        <div class="creative-title">Laminated Croissants</div>
+        <div class="creative-sub">Attempt #4 · Apr 2026</div>
+      </div>
+    </a>
+    <a class="creative-card" href="#">
+      <div class="creative-thumb">🎂</div>
+      <div class="creative-meta">
+        <div class="creative-title">Earl Grey Cake</div>
+        <div class="creative-sub">Infused custard · Mar 2026</div>
+      </div>
+    </a>
+    <a class="creative-card" href="#">
+      <div class="creative-thumb">🫓</div>
+      <div class="creative-meta">
+        <div class="creative-title">Focaccia Art</div>
+        <div class="creative-sub">Rosemary & olive · Feb 2026</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <div class="contact-row">
+    <div class="contact-item">
+      <span class="contact-label">Email</span>
+      <span class="contact-value"><a href="mailto:you@email.com">you@email.com</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">GitHub</span>
+      <span class="contact-value"><a href="https://github.com/hannah2580" target="_blank">github.com/hannah2580</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">LinkedIn</span>
+      <span class="contact-value"><a href="#" target="_blank">linkedin.com/in/yourname</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">Location</span>
+      <span class="contact-value">Your City, UK</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built with GitHub Pages.
+</footer>
+
+</body>
+</html>
