@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hannah Tang | Portfolio</title>
+<title>Apps | Hannah Tang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -43,6 +43,8 @@
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--ink);
   }
   .nav-links {
     display: flex;
@@ -57,39 +59,20 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); border-bottom: 1px solid var(--ink); }
 
-  .hero { margin-bottom: 5rem; }
-  .hero h1 {
+  .page-header { margin-bottom: 3rem; }
+  .page-header h1 {
     font-family: var(--serif);
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
-  .hero h1 em { color: var(--accent); font-style: italic; }
-  .hero p {
-    font-size: 1rem;
+  .page-header p {
+    font-size: 0.95rem;
     color: var(--muted);
-    max-width: 480px;
-    line-height: 1.8;
-  }
-  .tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-  }
-  .tag {
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
   }
 
-  section { margin-bottom: 4.5rem; }
   .section-label {
     font-size: 0.7rem;
     letter-spacing: 0.12em;
@@ -117,6 +100,7 @@
     align-items: start;
   }
   .project-card:first-child { border-top: 1px solid var(--border); }
+  .project-card:last-child { border-bottom: none; }
   .project-title {
     font-family: var(--serif);
     font-size: 1rem;
@@ -151,47 +135,6 @@
   }
   .project-link:hover { opacity: 0.7; }
 
-  .post-list { display: flex; flex-direction: column; gap: 0; }
-  .post-item {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-  }
-  .post-item:first-child { border-top: 1px solid var(--border); }
-  .post-title {
-    font-size: 0.95rem;
-    font-family: var(--serif);
-    text-decoration: none;
-    color: var(--ink);
-    transition: color 0.2s;
-  }
-  .post-title:hover { color: var(--accent); }
-  .post-date {
-    font-size: 0.78rem;
-    color: var(--muted);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .contact-row { display: flex; flex-direction: column; gap: 0.6rem; }
-  .contact-item { display: flex; gap: 1rem; font-size: 0.9rem; }
-  .contact-label {
-    color: var(--muted);
-    min-width: 80px;
-    font-size: 0.82rem;
-    letter-spacing: 0.02em;
-  }
-  .contact-value a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    transition: border-color 0.2s;
-  }
-  .contact-value a:hover { border-color: var(--accent); }
-
   footer {
     margin-top: 5rem;
     padding-top: 1.5rem;
@@ -199,53 +142,69 @@
     font-size: 0.78rem;
     color: var(--muted);
   }
+
+  .project-card:first-child { border-top: none; }
+  .section-label { margin-bottom: 0; }
+
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-name">Hannah Tang</span>
+  <a class="nav-name" href="index.html">Hannah Tang</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
-    <li><a href="apps.html">Apps</a></li>
+    <li><a href="apps.html" class="active">Apps</a></li>
     <li><a href="writing.html">Writing</a></li>
     <li><a href="music.html">Music</a></li>
   </ul>
 </nav>
 
 
-<section class="hero">
-  <h1>Data Science, urban analytics,<br>and <em>social impact</em></h1>
-  <p>Data scientist branching into business and product analysis. Currently deepening Python and machine learning skills alongside R. Learning and creating makes me happy, so this space helps me stay accountable to keep doing just that. </p>
-  <div class="tag-row">
-    <span class="tag">RStudio</span>
-    <span class="tag">SQL</span>
-    <span class="tag">Python</span>
-    <span class="tag">Git</span>
-    <span class="tag">Excel</span>
+<div class="page-header">
+  <h1>Apps</h1>
+</div>
 
-  </div>
-</section>
+<div class="section-label">For Fun</div>
+<div class="project-grid">
 
-
-<section id="contact">
-  <div class="section-label">Contact</div>
-  <div class="contact-row">
-    <div class="contact-item">
-      <span class="contact-label">GitHub</span>
-      <span class="contact-value"><a href="https://github.com/hannah2580" target="_blank">github.com/hannah2580</a></span>
+  <div class="project-card">
+    <div style="width: 100%;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;">
+            <div class="project-title">Kairo</div>
+            <div style="display: flex; align-items: baseline; gap: 1rem;">
+                <span style="font-size: 0.78rem; color: var(--muted); white-space: nowrap;">May 2026</span>
+                <a class="project-link" href="https://kairo-journalling.netlify.app" target="_blank">Prototype →</a>
+            </div>
+        </div>
+      <div class="project-desc"> A weather-inspired journaling app that helps users track their inner climate through storms, fog, rain, and clear skies. Built around proven psychological practices, it focuses on identifying emotional triggers and spotting patterns over time through guided conversations, helping users understand not just how they feel, but what drives it and what may help next. Alpha testing.
+ </div>
+      <div class="project-tags">
+        <span class="project-tag">Claude Code</span>
+        <span class="project-tag">Vibe-coding</span>
+      </div>
     </div>
-    <div class="contact-item">
-      <span class="contact-label">LinkedIn</span>
-      <span class="contact-value"><a href="https://www.linkedin.com/in/hannahtang23" target="_blank">linkedin.com/in/hannahtang23</a></span>
     </div>
-    <div class="contact-item">
-      <span class="contact-label">Location</span>
-      <span class="contact-value">University College London, UK</span>
+    
+  <div class="project-card">
+    <div style="width: 100%;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;">
+            <div class="project-title">Seniors Circle</div>
+            <div style="display: flex; align-items: baseline; gap: 1rem;">
+                <span style="font-size: 0.78rem; color: var(--muted); white-space: nowrap;">Nov 2025</span>
+                <a class="project-link" href="https://london-seniors-connect.lovable.app" target="_blank">Website →</a>
+            </div>
+        </div>
+      <div class="project-desc"> Designed for a Lovable Vibe Coding Hackathon, this platform aims to tackle elderly loneliness by helping seniors discover local events, host their own events ("Circle sessions"), join interest-based communities, and connect with others. Features location-based event filtering, messaging, and public/paid event listings from external organisations. Currently limited to London, UK.
+ </div>
+      <div class="project-tags">
+        <span class="project-tag">Social Impact</span>
+        <span class="project-tag">Social Network</span>
+      </div>
     </div>
-  </div>
-</section>
+</div>
+</div>
 
 </body>
 </html>
